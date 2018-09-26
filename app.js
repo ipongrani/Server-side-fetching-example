@@ -11,19 +11,15 @@ let Mongo = require('mongodb-bluebird');
 
 //route init
 let Registration = require('./routes/Registration')(express,axios);
-
-
-
-
+let Login = require('./routes/Login')(express,axios);
+let User = require('./routes/User')(express,axios);
+let Index = require('./routes/Index');
 
 
 // DOTENV ---------------------
 const dotenv = require('dotenv');
 dotenv.config();
 //-----------------------------
-
-
-
 
 
 // view engine setup
@@ -38,14 +34,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //Routes
+app.use('/', Index);
 app.use('/Registration', Registration);
-
+app.use('/Login', Login);
+app.use('/User', User);
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
