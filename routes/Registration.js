@@ -18,7 +18,7 @@ module.exports = (express,axios) => {
 
     axios({
          method: 'post',
-         url: `http://nucleus-0.herokuapp.com/care-center/Registration?action=nM`,
+         url: `http://care-center-bck-layer1.herokuapp.com/care-center/Registration?action=nM`,
          data: {
            name: req.body.name,
            address: req.body.address,
@@ -34,7 +34,7 @@ module.exports = (express,axios) => {
 
     axios({
          method: 'post',
-         url: `http://nucleus-0.herokuapp.com/care-center/Registration?action=nF`,
+         url: `http://care-center-bck-layer1.herokuapp.com/care-center/Registration?action=nF`,
          data: {
            name: req.body.name,
            address: req.body.address,
